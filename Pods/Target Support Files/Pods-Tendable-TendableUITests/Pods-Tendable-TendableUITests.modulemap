@@ -1,0 +1,6 @@
+framework module Pods_Tendable_TendableUITests {
+  umbrella header "Pods-Tendable-TendableUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

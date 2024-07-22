@@ -13,6 +13,8 @@
 		7A47758C2C4EB42E008D6A85 /* MCQButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */; };
 		7A47758E2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47758D2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift */; };
 		7A4775922C4ED348008D6A85 /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */; };
+		7A4775942C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775932C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift */; };
+		7A4775962C4EEE37008D6A85 /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775952C4EEE37008D6A85 /* HomeViewControllerExtension.swift */; };
 		7A87FC9C2C4D2EE4004D1A67 /* APIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */; };
 		7A87FC9E2C4E1888004D1A67 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */; };
 		7A87FCA52C4E6595004D1A67 /* PersistentStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */; };
@@ -67,6 +69,8 @@
 		7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQButtonData.swift; sourceTree = "<group>"; };
 		7A47758D2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionSurveyMcqDataPassProtocol.swift; sourceTree = "<group>"; };
 		7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
+		7A4775932C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewControllerExtension.swift; sourceTree = "<group>"; };
+		7A4775952C4EEE37008D6A85 /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
 		7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModels.swift; sourceTree = "<group>"; };
 		7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageManager.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */,
+				7A4775952C4EEE37008D6A85 /* HomeViewControllerExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,8 +175,8 @@
 		7A47758A2C4EB414008D6A85 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */,
 				7A47758D2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift */,
+				7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */,
+				7A4775932C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,12 +258,12 @@
 		7AB832232C4BE859009D2C59 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7AB832242C4BE869009D2C59 /* NetworkManager.swift */,
+				7A4775882C4E7FA3008D6A85 /* CommonExtension.swift */,
 				7AB832262C4BF7FD009D2C59 /* Constants.swift */,
 				7AB832282C4BF94F009D2C59 /* Extension+Color.swift */,
 				7AB832352C4CC8E5009D2C59 /* Extension+TextField.swift */,
+				7AB832242C4BE869009D2C59 /* NetworkManager.swift */,
 				7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */,
-				7A4775882C4E7FA3008D6A85 /* CommonExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -265,11 +271,11 @@
 		7AB8322A2C4C13BF009D2C59 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7A47758F2C4ED31C008D6A85 /* SurveryListController */,
+				7AB832392C4CCD62009D2C59 /* BaseViewController.swift */,
 				7A4775832C4E7D3D008D6A85 /* HomeController */,
 				7A4775822C4E7D2F008D6A85 /* LoginController */,
 				7A4775812C4E7D0D008D6A85 /* RegisterController */,
-				7AB832392C4CCD62009D2C59 /* BaseViewController.swift */,
+				7A47758F2C4ED31C008D6A85 /* SurveryListController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,8 +283,8 @@
 		7AB8322B2C4C13D0009D2C59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7AB832332C4CC890009D2C59 /* TendableTextField.swift */,
 				7AB832372C4CC9B2009D2C59 /* TendableButton.swift */,
+				7AB832332C4CC890009D2C59 /* TendableTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -563,6 +569,8 @@
 				7A47758C2C4EB42E008D6A85 /* MCQButtonData.swift in Sources */,
 				7A4775872C4E7D87008D6A85 /* MCQTableViewCell.swift in Sources */,
 				7A87FC9E2C4E1888004D1A67 /* HomeViewController.swift in Sources */,
+				7A4775942C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift in Sources */,
+				7A4775962C4EEE37008D6A85 /* HomeViewControllerExtension.swift in Sources */,
 				7A87FC9C2C4D2EE4004D1A67 /* APIDataModels.swift in Sources */,
 				7AB8323A2C4CCD62009D2C59 /* BaseViewController.swift in Sources */,
 				7AB832342C4CC890009D2C59 /* TendableTextField.swift in Sources */,

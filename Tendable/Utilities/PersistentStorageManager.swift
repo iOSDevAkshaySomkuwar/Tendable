@@ -34,7 +34,7 @@ class PersistentStorageManager {
     func loadData(id: String) -> InspectionDataModel? {
         if let data = defaults.data(forKey: id) {
             do {
-                var result = try JSONDecoder().decode(InspectionDataModel.self, from: data)
+                let result = try JSONDecoder().decode(InspectionDataModel.self, from: data)
                 return result
             } catch {
                 print(error)
@@ -50,7 +50,7 @@ class PersistentStorageManager {
     }
     
     func isSurveyAvailable(id: Int?) -> Bool {
-        if let inspectionId = id, let survey = loadData(id: String(inspectionId)) {
+        if let inspectionId = id, let _ = loadData(id: String(inspectionId)) {
             return true
         } else {
             return false

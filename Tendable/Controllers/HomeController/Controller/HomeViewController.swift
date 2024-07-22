@@ -10,14 +10,14 @@ import UIKit
 class HomeViewController: BaseViewController {
     
     // MARK: - Properties
-    private var inspectionDataSource: InspectionDataModel = InspectionDataModel() {
+    var inspectionDataSource: InspectionDataModel = InspectionDataModel() {
         didSet {
             surveyTableView.reloadData()
             checkActionButtonStatus()
         }
     }
     
-    private var surveyTableView: UITableView = {
+    var surveyTableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.backgroundColor = UIColor.systemGroupedBackground
@@ -158,7 +158,7 @@ class HomeViewController: BaseViewController {
             guard let self = self, let response = responseData else { return }
             
             switch response {
-            case .success(let result, let data):
+            case .success(let result, _):
                 self.inspectionDataSource.isSurverySubmitted = true
                 PersistentStorageManager.shared.saveSurvey(data: self.inspectionDataSource)
                 self.showAlert(title: result.message) {
@@ -179,7 +179,7 @@ class HomeViewController: BaseViewController {
         self.submitButton.isEnabled = state
     }
     
-    private func getNumberOfRowsIn(section: Int) -> Int {
+    func getNumberOfRowsIn(section: Int) -> Int {
         if let count = inspectionDataSource.inspection?.survey?.categories?[section].questions?.count {
             return count
         } else {
@@ -187,7 +187,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    private func getNumberOfSection() -> Int {
+    func getNumberOfSection() -> Int {
         if let count = inspectionDataSource.inspection?.survey?.categories?.count {
             return count
         } else {
@@ -195,7 +195,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    private func getTitleForHeaderIn(section: Int) -> String {
+    func getTitleForHeaderIn(section: Int) -> String {
         if let name = inspectionDataSource.inspection?.survey?.categories?[section].name {
             return name
         } else {
@@ -203,7 +203,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    private func getQuestionFor(_ indexPath: IndexPath) -> InspectionSurvey.Question? {
+    func getQuestionFor(_ indexPath: IndexPath) -> InspectionSurvey.Question? {
         if let question = inspectionDataSource.inspection?.survey?.categories?[indexPath.section].questions?[indexPath.row] {
             return question
         } else {
@@ -243,42 +243,5 @@ class HomeViewController: BaseViewController {
             self.saveButton.isHidden = true
             self.submitButton.isHidden = true
         }
-    }
-}
-
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return getNumberOfSection()
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getNumberOfRowsIn(section: section)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = surveyTableView.dequeueReusableCell(withIdentifier: MCQTableViewCell.identifier, for: indexPath) as! MCQTableViewCell
-        cell.mcqDataPassDelegate = self
-        cell.populateWith(question: getQuestionFor(indexPath), indexPath: indexPath)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return getTitleForHeaderIn(section: section)
-    }
-}
-
-extension HomeViewController: InspectionSurveyMcqDataPassProtocol, PassSurveyFromListProtocol {
-    func passed(survey: InspectionDataModel) {
-        self.inspectionDataSource = survey
-    }
-    
-    func mcqAnswered(for section: IndexPath, id: Int) {
-        guard let surveryDone = self.inspectionDataSource.isSurverySubmitted, !surveryDone else { return }
-        self.inspectionDataSource.inspection?.survey?.categories?[section.section].questions?[section.row].selectedAnswerChoiceId = id
     }
 }

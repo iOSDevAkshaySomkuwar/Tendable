@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4B3A1C74B0FD2627FF58D6F1 /* Pods_Tendable_TendableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E9D3FE305E5E5D8E70CF14 /* Pods_Tendable_TendableUITests.framework */; };
+		7A4775872C4E7D87008D6A85 /* MCQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775862C4E7D87008D6A85 /* MCQTableViewCell.swift */; };
+		7A4775892C4E7FA3008D6A85 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775882C4E7FA3008D6A85 /* CommonExtension.swift */; };
+		7A47758C2C4EB42E008D6A85 /* MCQButtonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */; };
+		7A47758E2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47758D2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift */; };
+		7A4775922C4ED348008D6A85 /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */; };
+		7A87FC9C2C4D2EE4004D1A67 /* APIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */; };
+		7A87FC9E2C4E1888004D1A67 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */; };
+		7A87FCA52C4E6595004D1A67 /* PersistentStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */; };
 		7AB831F42C4BE4D9009D2C59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB831F32C4BE4D9009D2C59 /* AppDelegate.swift */; };
 		7AB831F62C4BE4D9009D2C59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB831F52C4BE4D9009D2C59 /* SceneDelegate.swift */; };
 		7AB831F82C4BE4D9009D2C59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB831F72C4BE4D9009D2C59 /* ViewController.swift */; };
@@ -17,6 +25,15 @@
 		7AB8320B2C4BE4DA009D2C59 /* TendableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8320A2C4BE4DA009D2C59 /* TendableTests.swift */; };
 		7AB832152C4BE4DA009D2C59 /* TendableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832142C4BE4DA009D2C59 /* TendableUITests.swift */; };
 		7AB832172C4BE4DA009D2C59 /* TendableUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832162C4BE4DA009D2C59 /* TendableUITestsLaunchTests.swift */; };
+		7AB832252C4BE869009D2C59 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832242C4BE869009D2C59 /* NetworkManager.swift */; };
+		7AB832272C4BF7FD009D2C59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832262C4BF7FD009D2C59 /* Constants.swift */; };
+		7AB832292C4BF94F009D2C59 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832282C4BF94F009D2C59 /* Extension+Color.swift */; };
+		7AB8322E2C4C1407009D2C59 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8322D2C4C1407009D2C59 /* RegisterViewController.swift */; };
+		7AB832302C4C1418009D2C59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB8322F2C4C1418009D2C59 /* LoginViewController.swift */; };
+		7AB832342C4CC890009D2C59 /* TendableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832332C4CC890009D2C59 /* TendableTextField.swift */; };
+		7AB832362C4CC8E5009D2C59 /* Extension+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832352C4CC8E5009D2C59 /* Extension+TextField.swift */; };
+		7AB832382C4CC9B2009D2C59 /* TendableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832372C4CC9B2009D2C59 /* TendableButton.swift */; };
+		7AB8323A2C4CCD62009D2C59 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB832392C4CCD62009D2C59 /* BaseViewController.swift */; };
 		A98DED0A32FDF359887D6C0C /* Pods_Tendable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EAAEC0C009A97C669B9B8AB /* Pods_Tendable.framework */; };
 		D67538D7ECC88827942BD79D /* Pods_TendableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2CC59A0915C6F308533F4 /* Pods_TendableTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +62,14 @@
 		1258D71F62E315113AB95324 /* Pods-TendableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TendableTests.debug.xcconfig"; path = "Target Support Files/Pods-TendableTests/Pods-TendableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		17E9D3FE305E5E5D8E70CF14 /* Pods_Tendable_TendableUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tendable_TendableUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EAAEC0C009A97C669B9B8AB /* Pods_Tendable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tendable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A4775862C4E7D87008D6A85 /* MCQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQTableViewCell.swift; sourceTree = "<group>"; };
+		7A4775882C4E7FA3008D6A85 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
+		7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCQButtonData.swift; sourceTree = "<group>"; };
+		7A47758D2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionSurveyMcqDataPassProtocol.swift; sourceTree = "<group>"; };
+		7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
+		7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModels.swift; sourceTree = "<group>"; };
+		7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageManager.swift; sourceTree = "<group>"; };
 		7AB831F02C4BE4D9009D2C59 /* Tendable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tendable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB831F32C4BE4D9009D2C59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB831F52C4BE4D9009D2C59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +83,15 @@
 		7AB832102C4BE4DA009D2C59 /* TendableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TendableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB832142C4BE4DA009D2C59 /* TendableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendableUITests.swift; sourceTree = "<group>"; };
 		7AB832162C4BE4DA009D2C59 /* TendableUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendableUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7AB832242C4BE869009D2C59 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7AB832262C4BF7FD009D2C59 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7AB832282C4BF94F009D2C59 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		7AB8322D2C4C1407009D2C59 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7AB8322F2C4C1418009D2C59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7AB832332C4CC890009D2C59 /* TendableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendableTextField.swift; sourceTree = "<group>"; };
+		7AB832352C4CC8E5009D2C59 /* Extension+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TextField.swift"; sourceTree = "<group>"; };
+		7AB832372C4CC9B2009D2C59 /* TendableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TendableButton.swift; sourceTree = "<group>"; };
+		7AB832392C4CCD62009D2C59 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ABBB25D59B492A3CFFDE4EB9 /* Pods-Tendable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tendable.release.xcconfig"; path = "Target Support Files/Pods-Tendable/Pods-Tendable.release.xcconfig"; sourceTree = "<group>"; };
 		ACEA6C554D48BF782E422C40 /* Pods-Tendable-TendableUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tendable-TendableUITests.debug.xcconfig"; path = "Target Support Files/Pods-Tendable-TendableUITests/Pods-Tendable-TendableUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D657D436212B74CC02645D24 /* Pods-TendableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TendableTests.release.xcconfig"; path = "Target Support Files/Pods-TendableTests/Pods-TendableTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +125,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A4775812C4E7D0D008D6A85 /* RegisterController */ = {
+			isa = PBXGroup;
+			children = (
+				7AB8322D2C4C1407009D2C59 /* RegisterViewController.swift */,
+			);
+			path = RegisterController;
+			sourceTree = "<group>";
+		};
+		7A4775822C4E7D2F008D6A85 /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				7AB8322F2C4C1418009D2C59 /* LoginViewController.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		7A4775832C4E7D3D008D6A85 /* HomeController */ = {
+			isa = PBXGroup;
+			children = (
+				7A47758A2C4EB414008D6A85 /* Model */,
+				7A4775852C4E7D60008D6A85 /* View */,
+				7A4775842C4E7D4C008D6A85 /* Controller */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		7A4775842C4E7D4C008D6A85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A4775852C4E7D60008D6A85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A4775862C4E7D87008D6A85 /* MCQTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A47758A2C4EB414008D6A85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A47758B2C4EB42E008D6A85 /* MCQButtonData.swift */,
+				7A47758D2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A47758F2C4ED31C008D6A85 /* SurveryListController */ = {
+			isa = PBXGroup;
+			children = (
+				7A4775902C4ED32A008D6A85 /* Controller */,
+			);
+			path = SurveryListController;
+			sourceTree = "<group>";
+		};
+		7A4775902C4ED32A008D6A85 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		7AB831E72C4BE4D9009D2C59 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +224,10 @@
 				7AB831FC2C4BE4DA009D2C59 /* Assets.xcassets */,
 				7AB831FE2C4BE4DA009D2C59 /* LaunchScreen.storyboard */,
 				7AB832012C4BE4DA009D2C59 /* Info.plist */,
+				7AB8322C2C4C13D6009D2C59 /* Models */,
+				7AB8322B2C4C13D0009D2C59 /* Views */,
+				7AB8322A2C4C13BF009D2C59 /* Controllers */,
+				7AB832232C4BE859009D2C59 /* Utilities */,
 			);
 			path = Tendable;
 			sourceTree = "<group>";
@@ -142,6 +247,48 @@
 				7AB832162C4BE4DA009D2C59 /* TendableUITestsLaunchTests.swift */,
 			);
 			path = TendableUITests;
+			sourceTree = "<group>";
+		};
+		7AB832232C4BE859009D2C59 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7AB832242C4BE869009D2C59 /* NetworkManager.swift */,
+				7AB832262C4BF7FD009D2C59 /* Constants.swift */,
+				7AB832282C4BF94F009D2C59 /* Extension+Color.swift */,
+				7AB832352C4CC8E5009D2C59 /* Extension+TextField.swift */,
+				7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */,
+				7A4775882C4E7FA3008D6A85 /* CommonExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7AB8322A2C4C13BF009D2C59 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A47758F2C4ED31C008D6A85 /* SurveryListController */,
+				7A4775832C4E7D3D008D6A85 /* HomeController */,
+				7A4775822C4E7D2F008D6A85 /* LoginController */,
+				7A4775812C4E7D0D008D6A85 /* RegisterController */,
+				7AB832392C4CCD62009D2C59 /* BaseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7AB8322B2C4C13D0009D2C59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AB832332C4CC890009D2C59 /* TendableTextField.swift */,
+				7AB832372C4CC9B2009D2C59 /* TendableButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7AB8322C2C4C13D6009D2C59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A30D5796AECBA454A427E52A /* Frameworks */ = {
@@ -406,9 +553,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB832272C4BF7FD009D2C59 /* Constants.swift in Sources */,
+				7AB832362C4CC8E5009D2C59 /* Extension+TextField.swift in Sources */,
+				7A47758E2C4EB8E3008D6A85 /* InspectionSurveyMcqDataPassProtocol.swift in Sources */,
+				7AB832292C4BF94F009D2C59 /* Extension+Color.swift in Sources */,
+				7AB8322E2C4C1407009D2C59 /* RegisterViewController.swift in Sources */,
+				7AB832252C4BE869009D2C59 /* NetworkManager.swift in Sources */,
+				7A4775922C4ED348008D6A85 /* SurveyListViewController.swift in Sources */,
+				7A47758C2C4EB42E008D6A85 /* MCQButtonData.swift in Sources */,
+				7A4775872C4E7D87008D6A85 /* MCQTableViewCell.swift in Sources */,
+				7A87FC9E2C4E1888004D1A67 /* HomeViewController.swift in Sources */,
+				7A87FC9C2C4D2EE4004D1A67 /* APIDataModels.swift in Sources */,
+				7AB8323A2C4CCD62009D2C59 /* BaseViewController.swift in Sources */,
+				7AB832342C4CC890009D2C59 /* TendableTextField.swift in Sources */,
+				7AB832302C4C1418009D2C59 /* LoginViewController.swift in Sources */,
+				7AB832382C4CC9B2009D2C59 /* TendableButton.swift in Sources */,
 				7AB831F82C4BE4D9009D2C59 /* ViewController.swift in Sources */,
 				7AB831F42C4BE4D9009D2C59 /* AppDelegate.swift in Sources */,
 				7AB831F62C4BE4D9009D2C59 /* SceneDelegate.swift in Sources */,
+				7A4775892C4E7FA3008D6A85 /* CommonExtension.swift in Sources */,
+				7A87FCA52C4E6595004D1A67 /* PersistentStorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,7 +665,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -516,7 +680,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -564,7 +728,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -573,7 +737,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -598,7 +762,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -627,7 +791,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,7 +815,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LR2Z2SB2G;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TendableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,7 +836,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LR2Z2SB2G;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TendableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -692,6 +856,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LR2Z2SB2G;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TendableUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -711,6 +876,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2LR2Z2SB2G;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TendableUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

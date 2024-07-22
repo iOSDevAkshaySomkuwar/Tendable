@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initialSetup()
         return true
+    }
+    
+    func initialSetup() {
+        IQKeyboardManager.shared.enable = true
+        
+        // Session restore and endpoints setting
+        let environment = Environment.development
+        Constant.environment = environment
     }
 
     // MARK: UISceneSession Lifecycle

@@ -56,4 +56,12 @@ class BaseViewController: UIViewController {
         alert.addAction(action)
         self.present(alert, animated: true)
     }
+    
+    func welcomeUser() {
+        if let window = self.sceneDelegate?.window {
+            let navigationController = UINavigationController(rootViewController: HomeViewController())
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+    }
 }

@@ -17,6 +17,46 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        checkSession(window: windowScene)
+    }
+    
+    func checkSession(window: UIWindowScene) {
+        let window = UIWindow(windowScene: window)
+        // manageOnboarding(window: window)
+        
+        // if userId is there user is logged in
+        self.manageOnboarding(window: window)
+        self.setupNavBarHeight()
+    }
+    
+    func manageOnboarding(window: UIWindow) {
+        let vc: UIViewController = PersistentStorageManager.shared.isUserLoggedIn() ? HomeViewController() : LoginViewController()
+        let navigationController = UINavigationController(rootViewController: vc)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        self.window = window
+        self.setupNavBarHeight()
+    }
+    
+    func setupNavBarHeight() {
+        var hasNotch: Bool {
+            var bottom: CGFloat = 0
+            if let window = self.window {
+                bottom = window.safeAreaInsets.bottom
+            }
+            return bottom > 0
+        }
+        
+        var heightOfNavBar: CGFloat {
+            if hasNotch {
+                return 130
+            } else {
+                return 100
+            }
+        }
+        Constant.deviceHasNotch = hasNotch
+        Constant.navBarHeight = heightOfNavBar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

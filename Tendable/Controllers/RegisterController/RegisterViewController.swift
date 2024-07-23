@@ -113,10 +113,10 @@ extension RegisterViewController: UITextFieldDelegate {
         let passwordTextFieldText = passwordTextField.textField.text ?? ""
         if textFieldText.isEmpty {
             isValid = false
-            self.showAlert(title: "Validation Error!", subTitle: nil, message: "Please enter email", actionTitle: "Okay")
+            self.showAlert(title: "Validation Error!", message: "Please enter email", actionTitle: "Okay")
         } else if passwordTextFieldText.isEmpty {
             isValid = false
-            self.showAlert(title: "Validation Error!", subTitle: nil, message: "Please enter password", actionTitle: "Okay")
+            self.showAlert(title: "Validation Error!", message: "Please enter password", actionTitle: "Okay")
         }
         return isValid
     }

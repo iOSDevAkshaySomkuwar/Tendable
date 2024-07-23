@@ -65,6 +65,9 @@ class HomeViewController: BaseViewController {
         let rightBarButton = UIBarButtonItem(title: "Survey List", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.navigateToSurveyList(_:)))
         self.navigationItem.rightBarButtonItem = rightBarButton
         
+        let leftBarButton = UIBarButtonItem(title: "New Survey", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.getNewSurvey(_:)))
+        self.navigationItem.leftBarButtonItem = leftBarButton
+        
         startInspection()
         
         surveyTableView.delegate = self
@@ -122,8 +125,61 @@ class HomeViewController: BaseViewController {
         vc.surveyPassDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func getNewSurvey(_ sender: Any) {
+        self.generateRandomInspectionFromBackend()
+    }
+    
     private func startInspection() {
         NetworkManager.shared.request(.startInspection, method: .get, parameters: nil) { [weak self] (responseData) in
+            guard let self = self, let response = responseData else { return }
+            
+            switch response {
+            case .success(_, let data):
+                do {
+                    guard let data = data else { return }
+                    var inspectionData = try JSONDecoder().decode(InspectionDataModel.self, from: data)
+                    let isSurveyAvailable = PersistentStorageManager.shared.isSurveyAvailable(id: inspectionData.inspection?.id)
+                    if isSurveyAvailable {
+                        if let id = inspectionData.inspection?.id, let surveyData = PersistentStorageManager.shared.loadData(id: String(id)) {
+                            self.inspectionDataSource = surveyData
+                        }
+                    } else {
+                        inspectionData.isSurverySubmitted = false
+                        self.inspectionDataSource = inspectionData
+                    }
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            case .failure(let error):
+                self.showAlert(title: error.message)
+            }
+            
+        } error: { [weak self] (error) in
+            guard let self = self else { return }
+            self.showAlert(title: error.debugDescription)
+        }
+    }
+    
+    private func generateRandomInspectionFromBackend() {
+        NetworkManager.shared.request(.generateRandomInspection, method: .get, parameters: nil) { [weak self] (responseData) in
+            guard let self = self, let response = responseData else { return }
+            
+            switch response {
+            case .success:
+                self.generateNewSurveyFromBackend()
+            case .failure(let error):
+                self.showAlert(title: error.message)
+            }
+            
+        } error: { [weak self] (error) in
+            guard let self = self else { return }
+            self.showAlert(title: error.debugDescription)
+        }
+    }
+    
+    private func generateNewSurveyFromBackend() {
+        NetworkManager.shared.request(.randomInspection, method: .get, parameters: nil) { [weak self] (responseData) in
             guard let self = self, let response = responseData else { return }
             
             switch response {
@@ -158,11 +214,12 @@ class HomeViewController: BaseViewController {
             guard let self = self, let response = responseData else { return }
             
             switch response {
-            case .success(let result, _):
+            case .success:
                 self.inspectionDataSource.isSurverySubmitted = true
                 PersistentStorageManager.shared.saveSurvey(data: self.inspectionDataSource)
-                self.showAlert(title: result.message) {
+                self.showAlert(title: "Survey Submitted", message: "Your score is \(self.inspectionDataSource.score)") {
                     self.navigateToSurveyList(self)
+                    self.startInspection()
                 }
             case .failure(let error):
                 self.showAlert(title: error.message)

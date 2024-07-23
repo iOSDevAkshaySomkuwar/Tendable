@@ -37,7 +37,10 @@ extension SurveyListViewController: UITableViewDelegate, UITableViewDataSource {
         if let isSubmitted = surveyListDataSource[indexPath.row].isSurverySubmitted {
             isSurveySubmitted = isSubmitted
         }
-        cell.textLabel?.text = "Surney Area: \(surveyName)\nId: \(id)\n\(isSurveySubmitted ? "Survey Submitted: Yes" : "Survey Saved: Yes")"
+        var score = isSurveySubmitted ? (String(surveyListDataSource[indexPath.row].score)) : ("")
+        score = score != "" ? "\nScore: \(score)" : ""
+        cell.textLabel?.text = "Surney Area: \(surveyName)\nId: \(id)\n\(isSurveySubmitted ? "Survey Submitted: Yes" : "Survey Saved: Yes")\(score)"
+        print(surveyListDataSource[indexPath.row].score)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

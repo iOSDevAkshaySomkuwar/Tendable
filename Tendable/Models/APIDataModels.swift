@@ -16,6 +16,19 @@ struct APIErrorModel: Codable {
 struct InspectionDataModel: Codable {
     var inspection: InspectionModel?
     var isSurverySubmitted: Bool?
+    var score: Float {
+        var score: Float = 0.0
+        inspection?.survey?.categories?.forEach({ category in
+            category.questions?.forEach({ question in
+                question.answerChoices?.forEach({ answer in
+                    if question.selectedAnswerChoiceId == answer.id, let scoreValue = answer.score {
+                        score += scoreValue
+                    }
+                })
+            })
+        })
+        return score
+    }
 }
 
 struct InspectionModel: Codable {

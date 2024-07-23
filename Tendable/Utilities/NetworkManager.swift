@@ -13,6 +13,7 @@ enum Endpoints: String {
     case login = "login"
     case startInspection = "inspections/start"
     case randomInspection = "random_inspection"
+    case generateRandomInspection = "generate_random_inspections/5"
     case submit = "inspections/submit"
 }
 

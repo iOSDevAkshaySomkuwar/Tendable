@@ -15,6 +15,7 @@ enum Endpoints: String {
     case randomInspection = "random_inspection"
     case generateRandomInspection = "generate_random_inspections/5"
     case submit = "inspections/submit"
+    case specificInspection = "inspections/"
 }
 
 enum EnvironmentUrl: String {

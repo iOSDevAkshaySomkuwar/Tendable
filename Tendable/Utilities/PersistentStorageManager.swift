@@ -22,9 +22,7 @@ class PersistentStorageManager {
             let saveData = try JSONEncoder().encode(data)
             guard let id = data.inspection?.id else { return }
             let key = String(id)
-            print(key)
             defaults.set(saveData, forKey: key)
-            defaults.synchronize()
         } catch let error {
             print(error.localizedDescription)
         }
@@ -57,21 +55,23 @@ class PersistentStorageManager {
         }
     }
     
-    func saveSurvey(data surveyData: InspectionDataModel?) {
-        guard let survey = surveyData, let id = survey.inspection?.id else { return }
+    func saveSurvey(data surveyData: InspectionDataModel?) -> Bool {
+        guard let survey = surveyData, let id = survey.inspection?.id else { return false }
+        
         saveData(survey)
+        
         let key = String(describing: id)
-        var surveyIds: [String] = []
-        if let surveyArr = defaults.array(forKey: Keys.surveyList.rawValue) as? [String] {
-            surveyIds = surveyArr
-        }
+        var surveyIds: [String] = defaults.array(forKey: Keys.surveyList.rawValue) as? [String] ?? []
         surveyIds.append(key)
+        
         defaults.set(surveyIds, forKey: Keys.surveyList.rawValue)
-        defaults.synchronize()
+        
+        return true
     }
     
     func getSurveyList() -> [InspectionDataModel] {
         var surveyList: [InspectionDataModel] = []
+        
         if let idsList = defaults.array(forKey: Keys.surveyList.rawValue) as? [String] {
             idsList.removingDuplicates.forEach { id in
                 guard let survey = loadData(id: id) else { return }

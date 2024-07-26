@@ -68,6 +68,7 @@ class HomeViewController: BaseViewController {
         let leftBarButton = UIBarButtonItem(title: "New Survey", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.getNewSurvey(_:)))
         self.navigationItem.leftBarButtonItem = leftBarButton
         
+        checkActionButtonStatus()
         startInspection()
         
         surveyTableView.delegate = self
@@ -104,7 +105,7 @@ class HomeViewController: BaseViewController {
     private func handlers() {
         saveButton.button.pressed = { [weak self] (sender) in
             guard let self = self else { return }
-            PersistentStorageManager.shared.saveSurvey(data: self.inspectionDataSource)
+            let _ = PersistentStorageManager.shared.saveSurvey(data: self.inspectionDataSource)
             self.showAlert(title: "Survey saved!") {
                 self.navigateToSurveyList(self)
             }
@@ -216,7 +217,7 @@ class HomeViewController: BaseViewController {
             switch response {
             case .success:
                 self.inspectionDataSource.isSurverySubmitted = true
-                PersistentStorageManager.shared.saveSurvey(data: self.inspectionDataSource)
+                let _ = PersistentStorageManager.shared.saveSurvey(data: self.inspectionDataSource)
                 self.showAlert(title: "Survey Submitted", message: "Your score is \(self.inspectionDataSource.score)") {
                     self.navigateToSurveyList(self)
                     self.startInspection()

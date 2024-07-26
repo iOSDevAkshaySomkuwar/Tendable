@@ -15,6 +15,7 @@
 		7A4775922C4ED348008D6A85 /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */; };
 		7A4775942C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775932C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift */; };
 		7A4775962C4EEE37008D6A85 /* HomeViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775952C4EEE37008D6A85 /* HomeViewControllerExtension.swift */; };
+		7A4775A12C527D41008D6A85 /* TestInspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4775A02C527D41008D6A85 /* TestInspection.swift */; };
 		7A87FC9C2C4D2EE4004D1A67 /* APIDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */; };
 		7A87FC9E2C4E1888004D1A67 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */; };
 		7A87FCA52C4E6595004D1A67 /* PersistentStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */; };
@@ -71,6 +72,7 @@
 		7A4775912C4ED348008D6A85 /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
 		7A4775932C4EEDEA008D6A85 /* SurveyListViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewControllerExtension.swift; sourceTree = "<group>"; };
 		7A4775952C4EEE37008D6A85 /* HomeViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerExtension.swift; sourceTree = "<group>"; };
+		7A4775A02C527D41008D6A85 /* TestInspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInspection.swift; sourceTree = "<group>"; };
 		7A87FC9B2C4D2EE4004D1A67 /* APIDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModels.swift; sourceTree = "<group>"; };
 		7A87FC9D2C4E1888004D1A67 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7A87FCA42C4E6595004D1A67 /* PersistentStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorageManager.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB8320A2C4BE4DA009D2C59 /* TendableTests.swift */,
+				7A4775A02C527D41008D6A85 /* TestInspection.swift */,
 			);
 			path = TendableTests;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB8320B2C4BE4DA009D2C59 /* TendableTests.swift in Sources */,
+				7A4775A12C527D41008D6A85 /* TestInspection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

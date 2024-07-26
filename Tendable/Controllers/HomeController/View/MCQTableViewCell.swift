@@ -43,26 +43,44 @@ class MCQTableViewCell: UITableViewCell {
     
     private var dataSource: InspectionSurvey.Question = InspectionSurvey.Question() {
         didSet {
-            questionLabel.text = dataSource.name ?? ""
-            answerButtons.removeAll()
-            answerButtonsStackView.removeAllSubviews()
-            dataSource.answerChoices?.forEach({ answer in
-                let button: MCQButton = {
-                    let button = MCQButton()
-                    button.translatesAutoresizingMaskIntoConstraints = false
-                    button.setup(title: answer.name ?? "", isMCQButtonSelected: answer.isAnswerSelected(self.dataSource.selectedAnswerChoiceId), tag: answer.id)
-                    return button
-                }()
-                button.button.pressed = { [weak self] (sender) in
-                    guard let self = self else { return }
-                    self.mcqDataPassDelegate?.mcqAnswered(for: self.indexPath, id: button.button.tag)
-                }
-                answerButtons.append(button)
-            })
-            setupViews()
+            updateQuestionLabel()
+            resetAnswerButtons()
+            setupAnswerButtons()
+            setupViewsIfNeeded()
         }
     }
     
+    private func updateQuestionLabel() {
+        questionLabel.text = dataSource.name ?? ""
+    }
+    
+    private func resetAnswerButtons() {
+        answerButtons.removeAll()
+        answerButtonsStackView.removeAllSubviews()
+    }
+    
+    private func setupAnswerButtons() {
+        dataSource.answerChoices?.forEach { answer in
+            let button = createMCQButton(for: answer)
+            button.button.pressed = { [weak self] sender in
+                guard let self = self else { return }
+                self.mcqDataPassDelegate?.mcqAnswered(for: self.indexPath, id: button.button.tag)
+            }
+            answerButtons.append(button)
+        }
+    }
+    
+    private func createMCQButton(for answer: InspectionSurvey.AnswerChoice) -> MCQButton {
+        let button = MCQButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setup(title: answer.name ?? "", isMCQButtonSelected: answer.isAnswerSelected(self.dataSource.selectedAnswerChoiceId), tag: answer.id)
+        return button
+    }
+    
+    private func setupViewsIfNeeded() {
+        setupViews()
+    }
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none

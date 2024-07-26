@@ -68,6 +68,7 @@ class HomeViewController: BaseViewController {
         let leftBarButton = UIBarButtonItem(title: "New Survey", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.getNewSurvey(_:)))
         self.navigationItem.leftBarButtonItem = leftBarButton
         
+        checkActionButtonStatus()
         startInspection()
         
         surveyTableView.delegate = self
